@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body,
+#app,
+main {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+main #main-form {
+    border: 1px solid white;
+    padding: 2em;
+    margin-bottom: 2em;
+    border-radius: 1em;
+}
+main #dashboard-card {
+    display: flex;
+    align-items: center;
+    padding: 0 2em;
+    font-size: larger;
+    font-weight: bold;
+}
+
+main #main-table {
+    max-height: 300px;
+    overflow: auto;
+}
+main #main-table table {
+    padding: 0;
+    margin: 0;
+}
+main #main-table table img {
+    width: 150px;
+}
+
+table .action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    height: 100%;
+}
+
+table tr td {
+    height: 100% !important;
+}
+
+table .action img {
+    width: 24px !important;
+}
+
+#login-form {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#login-form #main-form {
+    width: 80%;
+    background-color: white;
+    color: #333;
+}
+
+#login-form #main-form div.form-control {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5em;
+    align-items: center;
+    justify-content: center;
+    font-size: medium;
+    font-weight: bold;
+    padding: 2em 0;
+}
+#login-form #main-form .form-control span {
+    max-width: 60%;
+    width: 100%;
+}
+#login-form #main-form .form-control .logo img {
+    width: 100px;
+}
+#login-form #main-form .form-control .logo {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.admin-layout {
+    display: flex;
+}
+.admin-layout aside {
+    width: 350px;
+    height: 100vh;
+    background-color: #333;
+    overflow: auto;
+    color: white;
+}
+.admin-layout aside nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    padding: 1em;
+}
+.admin-layout aside nav .logo {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.admin-layout aside nav .logo img {
+    width: 75px;
+}
+.admin-layout aside nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    font-size: large;
+    padding: 0;
+}
+
+.admin-layout aside nav ul li {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.admin-layout aside nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.admin-layout .content {
+    width: 100%;
+}
+
+.admin-layout .content .container {
+    padding: 1em 0;
+}
+
+#search form {
+    display: flex;
+    align-items: center;
+}
