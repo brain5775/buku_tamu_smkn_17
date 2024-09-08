@@ -15,7 +15,7 @@
                     </li>
                     <li>
                         <img src="../img/icons/logout.svg" />
-                        <a href="#">Logout</a>
+                        <a href="/logout">Logout</a>
                     </li>
                 </ul>
             </nav>

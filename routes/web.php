@@ -17,12 +17,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [EventController::class,'index']);
 
-Route::get('/admin', function () {
-    return view('admin', [
-        "title"=>"Login",
-    ]);
+Route::middleware('auth')->group(function () {
+    Route::get('/home', [EventController::class,'dashboard'] );
 });
 
-Route::get('/admin/dashboard', [EventController::class,'dashboard'] );
-
+    
 Route::post('/',[EventController::class,'kirimData']);
+Auth::routes();
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::delete('/events/{id}', [EventController::class, 'delete'])->name('events.destroy');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

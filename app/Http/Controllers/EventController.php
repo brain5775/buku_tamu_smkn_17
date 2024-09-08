@@ -42,4 +42,15 @@ class EventController extends Controller
         return redirect('/');
         // dd($name);
     }
+    public function delete($id){
+        $user = Event::findOrFail($id);
+    
+        // Delete the user
+        $user->delete();
+    
+        return response()->json([
+            'status' => 'success',
+            'message' => 'User deleted successfully!'
+        ]);
+    }
 }

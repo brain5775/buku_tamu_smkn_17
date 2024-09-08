@@ -19,11 +19,11 @@
                             <label for="institution" class="form-label">Asal Institusi</label>
                             <input type="institution" class="form-control" id="text" name="institution" required>
                         </div>
-                        <div class="col">
+                        {{-- <div class="col">
                             <label for="photo" class="form-label">Foto</label>
                             <input type="file" class="form-control" id="photo" name="photo" accept="image/*"
                                 required>
-                        </div>
+                        </div> --}}
                         <div class="col">
                             <label for="date" class="form-label">Tanggal</label>
                             <input type="date" class="form-control" id="date" name="date" required>
@@ -56,7 +56,7 @@
                             <th scope="col">Nama</th>
                             <th scope="col">Email</th>
                             <th scope="col">Asal Institusi</th>
-                            <th scope="col">Foto</th>
+                            {{-- <th scope="col">Foto</th> --}}
                             <th scope="col">Tanggal</th>
                             <th scope="col">PIC</th>
                             <th scope="col">Status Kunjungan</th>
@@ -70,9 +70,9 @@
                                 <td>{{ $tm['name'] }}</td>
                                 <td>{{ $tm['email'] }}</td>
                                 <td>{{ $tm['institution'] }}</td>
-                                <td>
+                                {{-- <td>
                                     <img src="{{ $tm['photo'] }}" />
-                                </td>
+                                </td> --}}
                                 <td>{{ $tm['date'] }}</td>
                                 <td>{{ $tm->teacher['name'] }}</td>
                                 <td>{{ $tm['status'] == 'sb' ? 'Sudah Bertemu' : 'Belum Bertemu' }}</td>
