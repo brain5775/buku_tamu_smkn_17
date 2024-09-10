@@ -24,7 +24,7 @@ main #dashboard-card {
 }
 
 main #main-table {
-    max-height: 300px;
+    max-height: 600px;
     overflow: auto;
 }
 main #main-table table {
@@ -32,7 +32,11 @@ main #main-table table {
     margin: 0;
 }
 main #main-table table img {
-    width: 150px;
+    width: 100px;
+}
+main #main-table table {
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 table .action {
@@ -145,7 +149,6 @@ table .action img {
     padding: 1em 0;
 }
 
-#search form {
-    display: flex;
-    align-items: center;
+.action img {
+    cursor: pointer;
 }
