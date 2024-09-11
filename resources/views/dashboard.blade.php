@@ -64,10 +64,8 @@
                 </div>
                 <div class="modal-body">
                     <!-- Form to Update Data -->
-                    <form id="updateForm">
+                    <form id="updateForm" method="POST">
                         @csrf
-                        @method('PUT') <!-- Use the PUT method for updating data -->
-
                         <input type="hidden" name="id" id="record_id"> <!-- Hidden field for the record ID -->
 
                         <div class="form-group">
@@ -118,7 +116,7 @@
                             </select>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Update</button>
+                        <button type="submit" id="updateForm" class="btn btn-primary">Update</button>
                     </form>
                 </div>
             </div>
@@ -129,7 +127,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 @endsection
 @section('script')
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         $(document).ready(function() {
@@ -177,6 +175,7 @@
                 var modal = $(this);
 
                 // Set the form field values
+                modal.find('#updateForm').attr('action', '/events/' + id)
                 modal.find('#record_id').val(id);
                 modal.find('#edit_name').val(name);
                 modal.find('#edit_email').val(email);
@@ -192,31 +191,33 @@
                 } else {
                     modal.find('#current_photo').hide();
                 }
-            });
-            $('#updateForm').submit(function(e) {
-                e.preventDefault(); // Prevent the default form submission
 
-                var formData = new FormData(this); // Create a FormData object from the form
-                if (confirm('Are you sure you want to update this user?')) {
-                    $.ajax({
-                        url: $(this).attr('action'),
-                        type: 'PUT', // Use PUT method
-                        data: formData,
-                        processData: false, // Prevent jQuery from automatically transforming the data into a query string
-                        contentType: false, // Prevent jQuery from setting contentType
-                        success: function(response) {
-                            // Handle success (e.g., show a success message or update the UI)
-                            alert('Record updated successfully!');
-                            $('#updateModal').modal('hide');
-                            // Optionally refresh data or update the UI
-                        },
-                        error: function(xhr) {
-                            // Handle errors (e.g., show an error message)
-                            alert('An error occurred: ' + xhr.responseText);
-                        }
-                    });
-                }
             });
+            // $('#updateForm').submit(function(e) {
+            //     e.preventDefault(); // Prevent the default form submission
+
+            //     var formData = new FormData(this); // Create a FormData object from the form
+            //     // console.log($(this).attr('action'))
+            //     if (confirm('Are you sure you want to update this user?')) {
+            //         $.ajax({
+            //             url: $(this).attr('action'),
+            //             type: 'PUT', // Use PUT method
+            //             data: formData,
+            //             processData: false, // Prevent jQuery from automatically transforming the data into a query string
+            //             contentType: false, // Prevent jQuery from setting contentType
+            //             success: function(response) {
+            //                 // Handle success (e.g., show a success message or update the UI)
+            //                 alert('Record updated successfully!');
+            //                 $('#updateModal').modal('hide');
+            //                 // Optionally refresh data or update the UI
+            //             },
+            //             error: function(xhr) {
+            //                 // Handle errors (e.g., show an error message)
+            //                 alert('An error occurred: ' + xhr.responseText);
+            //             }
+            //         });
+            //     }
+            // });
         });
     </script>
 @endsection

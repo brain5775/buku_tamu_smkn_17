@@ -28,5 +28,5 @@ Route::post('/',[EventController::class,'kirimData']);
 Auth::routes();
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::delete('/events/{id}', [EventController::class, 'delete'])->name('events.destroy');
-Route::put('/update-record/{id}', [EventController::class, 'update'])->name('update_record');
+Route::post('/events/{id}', [EventController::class, 'update'])->name('update_record');
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

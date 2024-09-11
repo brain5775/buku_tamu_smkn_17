@@ -72,7 +72,7 @@ class EventController extends Controller
             'message' => 'User deleted successfully!'
         ]);
     }
-    public function update(Request $request, $id)
+    public function update(Request $request, $id):RedirectResponse
     {
         // Validate the request data
         $validatedData = $request->validate([
@@ -110,6 +110,6 @@ class EventController extends Controller
             'status' => $validatedData['status'],
         ]);
 
-        return response()->json(['success' => 'Record updated successfully!']);
+        return redirect('/home');
     }
 }
